@@ -4,7 +4,7 @@ This chapter defines the concept of five most common HTTP methods (or HTTP verbs
 
 ## GET
 
-**`GET`** method is used to retrieve the data from a server at the specified resource.
+**`GET`** method is used to retrieve the data from a server at the specified _resource_.
 
 `GET` methods are the most common and widely used methods in APIs and websites. For example, say you have an API with a `/users` endpoint. Making a `GET` request to that endpoint should return a list of all available users.
 
@@ -15,11 +15,15 @@ This chapter defines the concept of five most common HTTP methods (or HTTP verbs
 
 ## POST
 
-**POST** method is used to send the data to the API server to create or update a resource.
+**`POST`** method is used to send the data to the API server to create or update a _resource_.
 
-The data sent to the server is stored in the request body of the HTTP request.
+The data sent to the server is stored in the _request body_ or _query parameters_ of the HTTP request. The simplest example is a contact form on a website. When you fill out the inputs in a form and hit "Send", that data is put in the response body of the request and sent to the server.
 
-The simplest example is a contact form on a website. When you fill out the inputs in a form and hit Send, that data is put in the response body of the request and sent to the server. This may be JSON, XML, or query parameters (there's plenty of other formats, but these are the most common).
+#### Testing `POST` endpoint
+
+1. Create a resource with a POST request and ensure a 200 status code is returned.
+1. Next, make a GET request for that resource, and ensure the data was saved correctly.
+1. Add tests that ensure POST requests fail with incorrect or ill-formatted data.
 
 ### Save vs Idempotent methods
 
