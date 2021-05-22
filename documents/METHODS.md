@@ -3,10 +3,10 @@
 This chapter defines the concept of five most common HTTP methods (or HTTP verbs), which are `GET`, `POST`, `PUT`, `PATCH`, and `DELETE`. These methods are also known as **CRUD operations** - Create, Read, Update, Delete.
 
 - [GET](#get)
-- [POST](https://github.com/maratsafin601/asan-project/blob/main/documents/METHODS.md#post)
-- [PUT](https://github.com/maratsafin601/asan-project/blob/main/documents/METHODS.md#put)
-- [PATCH](https://github.com/maratsafin601/asan-project/blob/main/documents/METHODS.md#patch)
-- [DELETE](https://github.com/maratsafin601/asan-project/blob/main/documents/METHODS.md#delete)
+- [POST](#post)
+- [PUT](#put)
+- [PATCH](#patch)
+- [DELETE](#delete)
 
 ## GET
 
