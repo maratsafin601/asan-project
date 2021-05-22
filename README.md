@@ -1,9 +1,6 @@
 # Asan-Project: Backend Development
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
-If you want to learn more about Quarkus, please visit its website: https://quarkus.io/.
-Udemy course: https://www.udemy.com/course/quarkus-backend-development-java/.
-Course GitHub link: https://github.com/quarkus-course.
 
 ## How to create a new project
 
@@ -64,4 +61,13 @@ If you want to learn more about building native executables, please consult http
 
 REST is easy peasy with this Hello World RESTEasy resource.
 
-[Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+Related guide section: https://quarkus.io/guides/getting-started#the-jax-rs-resources.
+
+## References
+
+If you want to learn more about Quarkus, please visit its website: https://quarkus.io/.
+
+Udemy course: https://www.udemy.com/course/quarkus-backend-development-java/.
+
+Course GitHub link: https://github.com/quarkus-course.
+
