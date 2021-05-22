@@ -1,17 +1,17 @@
 # HTTP Methods
 
-This chapter defines the concept of HTTP methods, which are GET, POST, PUT or PATCH, and DELETE. These methods are also known as Verbs or **CRUD** operations - Create, Read, Update, Delete.
+This chapter defines the concept of five most common HTTP methods (or HTTP verbs), which are `GET`, `POST`, `PUT`, `PATCH`, and `DELETE`. These methods are also known as **CRUD operations** - Create, Read, Update, Delete.
 
 ## GET
 
-**GET** method is used to retrieve the data from a server at the specified resource.
+**`GET`** method is used to retrieve the data from a server at the specified resource.
 
-GET methods are the most common and widely used methods in APIs and websites. For example, say you have an API with a `/users` endpoint. Making a GET request to that endpoint should return a list of all available users.
+`GET` methods are the most common and widely used methods in APIs and websites. For example, say you have an API with a `/users` endpoint. Making a `GET` request to that endpoint should return a list of all available users.
 
-#### Testing GET endpoint
+#### Testing `GET` endpoint
 
-1. Check that a valid GET request returns a `200` status code.
-1. Ensure that a GET request to a specific resource returns the correct data. For example, GET `/users` returns a list of users, `/users/{id}` returns specified user.
+1. Check that a valid `GET` request returns a `200` status code.
+1. Ensure that a `GET` request to a specific resource returns the correct data. For example, `GET` `/users` returns a list of users, `GET` `/users/{id}` returns a specified user.
 
 ## POST
 
