@@ -17,18 +17,18 @@ This chapter defines the concept of five most common HTTP methods (aka verbs), w
 
 **Resource** - is an object with a type, associated data, relationships to other resources, and a set of methods that operate on it. Resource is the fundamental concept in the RESTful API, similar to an _Object_ in the Object-Oriented Programming or en _Entity_ in the Database. Resources can be grouped into _**collections**_. Example: `/users` - is a collection of resources (or a list of user objects), `/users/{id}` - is a single resource (one user object).
 
-**Endpoint** - is an entry point to an API. Endpoint indicates _where_ exactly a resource is located, it specifies the path to it, eg: `/users`, `/users/{id}`. While the method indicates _how_ you can operate on that resource, it specifies the allowed interactions, eg: `GET`, `POST`, `PUT`, `DELETE`.
+**Endpoint** - is an entry point to an API. _Endpoint_ indicates _where_ exactly a resource is located, it specifies the path to it, eg: `/users`, `/users/{id}`. While the _method_ indicates _how_ you can operate on that resource, it specifies the allowed interactions, eg: `GET`, `POST`, `PUT`, `DELETE`.
 
 #### Testing `GET` endpoint
 
 Positive test cases:
-1. Validate that a valid `GET` request returns a `200` or `OK` status code.
-1. Verify that a valid `GET` request to a specific resource returns expected data. Returned data can be a single resource, or a collection of resources. For example, `GET` request to `/customers` endpoint returns a list of customers, to `/customers/{id}` - a specified customer profile.
+1. Validate that a valid `GET` request returns a `200` (`OK`) status code.
+1. Verify that a valid `GET` request to a specific resource returns expected data. Returned data can be a single resource, or a collection of resources (a list of objects). For example, `GET` request to `/customers` endpoint returns a list of customers, request to `/customers/{id}` returns the specified customer.
 
 Negative test cases:
-1. Send `GET` request to a non-existing resource . Expected status code: `404` or `NOT_FOUND`.
-1. Send `GET` request to a forbidden resource . Expected status code: `403` or `FORBIDDEN`.
-1. Send `GET` request with a bad access token . Expected status code: `401` or `UNAUTHORIZED`.
+1. Send `GET` request to a non-existing resource . Expected status code: `404` (or )`NOT_FOUND`).
+1. Send `GET` request to a forbidden resource . Expected status code: `403` (`FORBIDDEN`).
+1. Send `GET` request with a bad access token . Expected status code: `401` (`UNAUTHORIZED`).
 
 ## POST
 
