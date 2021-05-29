@@ -13,15 +13,15 @@ This chapter defines the concept of five most common HTTP methods (aka verbs), w
 
 `GET` method is used to **retrieve** the data from a server at the specified _resource_.
 
-**Resource** - is an object with a type, associated data, relationships to other resources, and a set of methods that operate on it. Resource is the fundamental concept in RESTful API, similar to an Object in Object-Oriented Programming or Entity in a Database.
+**Resource** - is an object with a type, associated data, relationships to other resources, and a set of methods that operate on it. Resource is the fundamental concept in the RESTful API, similar to an Object in the Object-Oriented Programming or en Entity in the Database. Resources can be grouped into _collections_. Example: `/users` - is a collection of resources (list of user objects), `/users/{id}` - is a single resource (one user object).
 
-`GET` methods are the most common and widely used methods in APIs. Example: say, you have an API with a `/orders` endpoint. Making a `GET` request to that endpoint should return a list of orders. Resources can be grouped into _collections_. Example: `/users` - is a collection of resources (list of user objects), `/users/{id}` - is a single resource (one user object).
+`GET` methods are the most common and widely used methods in APIs. Example: say, you have an API with a `/orders` endpoint. Making a `GET` request to that endpoint should return a list of orders.
 
-#### Testing GET endpoint
+#### Testing `GET` endpoint
 
 Positive test cases:
 1. Validate that a valid `GET` request returns a `200` or `OK` status code.
-1. Verify that a `GET` request to a specific resource returns the correct data, it can be a single resource, or a collection of resources. For example, `GET` request to `/customers` endpoint returns a list of customers, to `/customers/{id}` - a specified customer profile.
+1. Verify that a valid `GET` request to a specific resource returns expected data. Returned data can be a single resource, or a collection of resources. For example, `GET` request to `/customers` endpoint returns a list of customers, to `/customers/{id}` - a specified customer profile.
 
 Negative test cases:
 1. Send `GET` request to a non-existing resource . Expected status code: `404` or `NOT_FOUND`.
@@ -32,13 +32,13 @@ Negative test cases:
 
 `POST` method is used to **send** the data to a server to create a _resource_.
 
-The data sent to a server is stored in the _request body_ (aka payload) or _query parameters_ of the HTTP request. Example: contact form on a website. When you fill out the inputs in a form and hit "Send", that data is put in the request body of the HTTP request and sent to the server.
+The data sent to a server is stored in _request body_ (also known as a _payload_) or in _query parameters_ of the HTTP request. Example: contact form on a website. When you fill out the inputs in a form and hit "Send", that data is put in the request body of the `POST` request and sent to the server.
 
 #### Testing `POST` endpoint
 
 Positive test cases:
 1. Validate that a valid `POST` request returns a `201` or `CREATED` status code.
-1. Verify that a `GET` request to , and ensure the data was saved correctly.
+1. Verify that a valid `GET` request to a just created resource returns expected data in the right format, fields and values are correct and not missing.
 
 Negative test cases:
 1. Send `POST` request with a bad payload. Expected status code: `400` or `BAD_REQUEST`.
