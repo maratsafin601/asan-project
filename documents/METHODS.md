@@ -11,11 +11,11 @@ This chapter defines the concept of five most common HTTP methods (aka verbs), w
 
 ## GET
 
-`GET` method is used to **retrieve** the data from a server at the specified _resource_.
-
-**Resource** - is an object with a type, associated data, relationships to other resources, and a set of methods that operate on it. Resource is the fundamental concept in the RESTful API, similar to an Object in the Object-Oriented Programming or en Entity in the Database. Resources can be grouped into _collections_. Example: `/users` - is a collection of resources (list of user objects), `/users/{id}` - is a single resource (one user object).
+`GET` method is used to **retrieve** the data from a server at the specified _**resource**_.
 
 `GET` methods are the most common and widely used methods in APIs. Example: say, you have an API with a `/orders` endpoint. Making a `GET` request to that endpoint should return a list of orders.
+
+**Resource** - is an object with a type, associated data, relationships to other resources, and a set of methods that operate on it. Resource is the fundamental concept in the RESTful API, similar to an _Object_ in the Object-Oriented Programming or en _Entity_ in the Database. Resources can be grouped into _**collections**_. Example: `/users` - is a collection of resources (list of user objects), `/users/{id}` - is a single resource (one user object).
 
 #### Testing `GET` endpoint
 
