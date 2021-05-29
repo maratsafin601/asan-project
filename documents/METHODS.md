@@ -30,9 +30,9 @@ While the _method_ indicates _how_ you can operate on that resource, it specifie
 
 Positive test cases:
 1. Validate response status code and response body:
-   When a valid `GET` request is sent to a specified resource,<p>
-   Then response status code is `200` (`OK`),
-   And response body has expected data (in the right format, and required fields and values are correct and not missing).
+   - When a valid `GET` request is sent to a specified resource,
+   - Then response status code is `200` (`OK`),
+   - And response body has expected data (in the right format, and required fields and values are correct and not missing).
    
 Again, returned data can be a single resource, or a collection of resources (a list of objects).
 For example, `GET` request to `/customers` endpoint returns a list of customers, request to `/customers/{id}` returns the specified customer.
