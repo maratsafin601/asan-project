@@ -32,15 +32,15 @@ Negative test cases:
 
 ## POST
 
-`POST` method is used to **send** the data to a server to create a _resource_.
+`POST` method is used to **SEND** the data to a server to **CREATE** a resource.
 
-The data sent to a server is stored in _request body_ (also known as a _payload_) or in _query parameters_ of the HTTP request. Example: contact form on a website. When you fill out the inputs in a form and hit "Send", that data is put in the request body of the `POST` request and sent to the server.
+The data sent to a server is stored in the _request body_ (also known as _payload_) or in _query parameters_ of the request. Example: contact form on a website. When you fill out the inputs in a form and hit "Send", that data is put in the request body of the `POST` request and sent to the server.
 
 #### Testing `POST` endpoint
 
 Positive test cases:
-1. Validate that a valid `POST` request returns a `201` or `CREATED` status code.
-1. Verify that a valid `GET` request to a just created resource returns expected data in the right format, fields and values are correct and not missing.
+1. Validate that a valid `POST` request returns a `201` (`CREATED`) status code.
+1. Verify that a valid `GET` request to a just created resource returns expected data and in the right format, required fields and values are correct and not missing.
 
 Negative test cases:
 1. Send `POST` request with a bad payload. Expected status code: `400` or `BAD_REQUEST`.
@@ -49,11 +49,9 @@ Negative test cases:
 
 ## PUT
 
-`PUT` method is used to **send** the data to a server to update a _resource_.
+`PUT` method is used to **SEND** the data to a server to **UPDATE** a resource.
 
-### POST vs PUT
-
-The difference between `POST` and `PUT` requests is that PUT is idempotent. Calling the same PUT request multiple times will always produce the same result. In contrast, calling a POST request repeatedly have side effects of creating the same resource multiple times.
+**POST vs PUT**. The difference between `POST` and `PUT` requests is that PUT is _idempotent_. Calling the same `PUT` request multiple times will always produce the same result. In contrast, calling a `POST` request repeatedly have side effects of creating the same resource multiple times.
 
 ### Save vs Idempotent methods
 
