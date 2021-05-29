@@ -26,7 +26,7 @@ Positive test cases:
 1. Verify that a valid `GET` request to a specific resource returns expected data. Returned data can be a single resource, or a collection of resources (a list of objects). For example, `GET` request to `/customers` endpoint returns a list of customers, request to `/customers/{id}` returns the specified customer.
 
 Negative test cases:
-1. Send `GET` request to a non-existing resource . Expected status code: `404` (or )`NOT_FOUND`).
+1. Send `GET` request to a non-existing resource . Expected status code: `404` (`NOT_FOUND`).
 1. Send `GET` request to a forbidden resource . Expected status code: `403` (`FORBIDDEN`).
 1. Send `GET` request with a bad access token . Expected status code: `401` (`UNAUTHORIZED`).
 
