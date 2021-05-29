@@ -11,13 +11,13 @@ This chapter defines the concept of five most common HTTP methods (aka verbs), w
 
 ## GET
 
-`GET` method is used to **retrieve** the data from a server at the specified _resource_.
+`GET` method is used to **RETRIEVE** the data from a server at the specified _resource_.
 
-`GET` methods are the most common and widely used methods in APIs. Example: say, you have an API with a `/orders` _endpoint_. Making a `GET` request to that endpoint should return a list of orders.
+`GET` methods are the most common and widely used methods in APIs. Example: say, you have an API with a `/orders` _endpoint_. Making a `GET` _request_ to that endpoint should return a list of orders.
 
-**Resource** - is an object with a type, associated data, relationships to other resources, and a set of methods that operate on it. Resource is the fundamental concept in the RESTful API, similar to an _Object_ in the Object-Oriented Programming or en _Entity_ in the Database. Resources can be grouped into _**collections**_. Example: `/users` - is a collection of resources (list of user objects), `/users/{id}` - is a single resource (one user object).
+**Resource** - is an object with a type, associated data, relationships to other resources, and a set of methods that operate on it. Resource is the fundamental concept in the RESTful API, similar to an _Object_ in the Object-Oriented Programming or en _Entity_ in the Database. Resources can be grouped into _**collections**_. Example: `/users` - is a collection of resources (or a list of user objects), `/users/{id}` - is a single resource (one user object).
 
-**Endpoint** - is an entry point to an API. Endpoint indicates _where_ exactlny a resource is located, it specifies the path to it. While the method indicates _how_ you can operate on that resource, it specifies the allowed interactions.
+**Endpoint** - is an entry point to an API. Endpoint indicates _where_ exactly a resource is located, it specifies the path to it, eg: `/users`, `/users/{id}`. While the method indicates _how_ you can operate on that resource, it specifies the allowed interactions, eg: `GET`, `POST`, `PUT`, `DELETE`.
 
 #### Testing `GET` endpoint
 
