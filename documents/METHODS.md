@@ -12,7 +12,7 @@ These methods are also known as **CRUD operations** - Create, Read, Update, Dele
 
 ## GET
 
-`GET` method is used to **RETRIEVE** the data from a server at the specified _resource_.
+**`GET`** method is used to **RETRIEVE** the data from a server at the specified _resource_.
 
 `GET` methods are the most common and widely used methods in APIs.
 Example: say, you have an API with a `/orders` _endpoint_.
@@ -34,7 +34,7 @@ Positive test cases:
    - Then response status code is `200` (`OK`),
    - And response body has expected data.
 
-The data is in the right format, and required fields and values are correct and not missing. Again, returned data can be a single resource, or a collection of resources (a list of objects).
+The returned data is in the right format, and required fields and values are correct and not missing. Again, `GET` response body can be a single resource, or a collection of resources (a list of objects).
 For example, `GET` request to `/customers` endpoint returns a list of customers, request to `/customers/{id}` returns the specified customer.
 
 Negative test cases:
@@ -44,7 +44,7 @@ Negative test cases:
 
 ## POST
 
-`POST` method is used to **SEND** the data to a server to **CREATE** a resource.
+**`POST`** method is used to **SEND** the data to a server to **CREATE** a new resource.
 
 The data sent to a server is stored in the _request body_ (also known as _payload_) or in _query parameters_ of the request. Example: contact form on a website.
 When you fill out the inputs in a form and hit "Send", that data is put in the request body of the `POST` request and sent to the server.
@@ -52,20 +52,21 @@ When you fill out the inputs in a form and hit "Send", that data is put in the r
 #### Testing `POST` endpoint
 
 Positive test cases:
-1. Validate response status code:
-   When a valid `POST` request is sent with a good payload, then response status code is `201` (`CREATED`).
-1. Validate response body:
-   When a valid `POST` request is sent with a good payload, then response body has expected data, in the right format, and required fields and values are correct and not missing.
-1. Verify that a valid `GET` request to a just created resource returns expected data and in the right format, required fields and values are correct and not missing.
+1. Validate response status code and response body:
+   - When a valid `POST` request is sent with a good payload,
+   - Then response status code is `201` (`CREATED`),
+   - And response body has expected data.
+
+The returned data is in the right format, and required fields and values are correct and not missing.
 
 Negative test cases:
-1. Send `POST` request with a bad payload. Expected status code: `400` or `BAD_REQUEST`.
-1. Send `POST` request to a forbidden resource . Expected status code: `403` or `FORBIDDEN`.
-1. Send `POST` request with a bad access token . Expected status code: `401` or `UNAUTHORIZED`.
+1. When a valid `POST` request is sent with a bad payload, then response status code is `400` (`BAD_REQUEST`).
+1. When a valid `POST` request is sent to a forbidden resource, then response status code is `403` (`FORBIDDEN`).
+1. When a valid `POST` request is sent with a bad access token , then response status code is `401` (`UNAUTHORIZED`).
 
 ## PUT
 
-`PUT` method is used to **SEND** the data to a server to **UPDATE** a resource.
+`PUT` method is used to **SEND** the data to a server to **UPDATE** an existing resource.
 
 **POST vs PUT**. The difference between `POST` and `PUT` requests is that PUT is _idempotent_.
 Calling the same `PUT` request multiple times will always produce the same result.
