@@ -8,6 +8,7 @@ This chapter defines the concept of five most common HTTP methods (aka verbs), w
 - [PATCH](#patch)
 - [DELETE](#delete)
 
+
 ## GET
 
 `GET` method is used to **retrieve** the data from a server at the specified _resource_.
@@ -19,6 +20,11 @@ This chapter defines the concept of five most common HTTP methods (aka verbs), w
 Positive test cases:
 1. Validate that a valid `GET` request returns a `200` or `OK` status code.
 1. Verify that a `GET` request to a specific resource returns the correct data, it can be an object, or a list of objects. For example, `GET` `/users` returns a list of users, `GET` `/users/{id}` returns a specified user.
+
+Negative test cases:
+1. Send GET request to a non-existing resource . Expected status code: `404` or `NOT_FOUND`.
+1. Send GET request to a forbidden resource . Expected status code: `403` or `FORBIDDEN`.
+1. Send GET request with a bad access token . Expected status code: `401` or `UNAUTHORIZED`.
 
 ## POST
 
@@ -39,7 +45,7 @@ Negative test cases:
 
 `PUT` method is used to **send** the data to a server to update a _resource_.
 
-### POST vs PUT methods
+### POST vs PUT
 
 The difference between `POST` and `PUT` requests is that PUT is idempotent. Calling the same PUT request multiple times will always produce the same result. In contrast, calling a POST request repeatedly have side effects of creating the same resource multiple times.
 
