@@ -34,7 +34,7 @@ Positive test cases:
    - Then response status code is `200` (`OK`),
    - And response body has expected data.
 
-The returned data is in the right format, and required fields and values are correct and not missing. Again, `GET` response body can be a single resource, or a collection of resources (a list of objects).
+Verify that returned data is in the right format, and required fields and values are correct and not missing. Again, `GET` response body can be a single resource, or a collection of resources (a list of objects).
 For example, `GET` request to `/customers` endpoint returns a list of customers, request to `/customers/{id}` returns the specified customer.
 
 Negative test cases:
@@ -56,8 +56,11 @@ Positive test cases:
    - When a valid `POST` request is sent with a good payload,
    - Then response status code is `201` (`CREATED`),
    - And response body has expected data.
+   To ensure that a just created resource is properly saved send GET request)
+   - When a valid `GET` request is sent to a new resource,
+   - Then retrieved resources is equal to posted.
 
-The returned data is in the right format, and required fields and values are correct and not missing.
+Verify that returned data is in the right format, and required fields and values are correct and not missing.
 
 Negative test cases:
 1. When a valid `POST` request is sent with a bad payload, then response status code is `400` (`BAD_REQUEST`).
