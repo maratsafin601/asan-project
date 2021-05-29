@@ -56,11 +56,11 @@ Positive test cases:
    - When a valid `POST` request is sent with a good payload,
    - Then response status code is `201` (`CREATED`),
    - And response body has expected data.
-   To ensure that a just created resource is properly saved send GET request)
    - When a valid `GET` request is sent to a new resource,
-   - Then retrieved resources is equal to posted.
+   - Then response body has expected data,
+   - And retrieved resources is equal to posted.
 
-Verify that returned data is in the right format, and required fields and values are correct and not missing.
+Why do we send GET request? To ensure that a just created resource is properly saved. Also, don't forget to verify that returned data is in the right format, and required fields and values are correct and not missing.
 
 Negative test cases:
 1. When a valid `POST` request is sent with a bad payload, then response status code is `400` (`BAD_REQUEST`).
