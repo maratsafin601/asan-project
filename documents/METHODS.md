@@ -29,12 +29,13 @@ While the _method_ indicates _how_ you can operate on that resource, it specifie
 #### Testing `GET` endpoint
 
 Positive test cases:
-1. Validate response status code:
-   When a valid `GET` request is sent, then response status code is `200` (`OK`) .
-1. Validate response body:
-   When a valid `GET` request is sent to a specified resource, then response body has expected data, in the right format, and required fields and values are correct and not missing.
-   Again, returned data can be a single resource, or a collection of resources (a list of objects).
-   For example, `GET` request to `/customers` endpoint returns a list of customers, request to `/customers/{id}` returns the specified customer.
+1. Validate response status code and response body:
+   When a valid `GET` request is sent to a specified resource,<p>
+   Then response status code is `200` (`OK`),
+   And response body has expected data (in the right format, and required fields and values are correct and not missing).
+   
+Again, returned data can be a single resource, or a collection of resources (a list of objects).
+For example, `GET` request to `/customers` endpoint returns a list of customers, request to `/customers/{id}` returns the specified customer.
 
 Negative test cases:
 1. When a valid `GET` request is sent to a non-existing resource, then response status code is `404` (`NOT_FOUND`).
@@ -51,7 +52,10 @@ When you fill out the inputs in a form and hit "Send", that data is put in the r
 #### Testing `POST` endpoint
 
 Positive test cases:
-1. Validate that a valid `POST` request returns a `201` (`CREATED`) status code.
+1. Validate response status code:
+   When a valid `POST` request is sent with a good payload, then response status code is `201` (`CREATED`).
+1. Validate response body:
+   When a valid `POST` request is sent with a good payload, then response body has expected data, in the right format, and required fields and values are correct and not missing.
 1. Verify that a valid `GET` request to a just created resource returns expected data and in the right format, required fields and values are correct and not missing.
 
 Negative test cases:
