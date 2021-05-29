@@ -22,8 +22,9 @@ This chapter defines the concept of five most common HTTP methods (aka verbs), w
 #### Testing `GET` endpoint
 
 Positive test cases:
-1. Validate that a valid `GET` request returns a `200` (`OK`) status code.
-1. Verify that a valid `GET` request to a specific resource returns expected data. Returned data can be a single resource, or a collection of resources (a list of objects). For example, `GET` request to `/customers` endpoint returns a list of customers, request to `/customers/{id}` returns the specified customer.
+1. Validate response status code: When a valid `GET` request is sent, then response status code is be `200` (`OK`) .
+1. Validate response body: When a valid `GET` request is sent to a specified resource, then response body has expected data, in the right format, and required fields and values are correct and not missing. 
+   Again, returned data can be a single resource, or a collection of resources (a list of objects). For example, `GET` request to `/customers` endpoint returns a list of customers, request to `/customers/{id}` returns the specified customer.
 
 Negative test cases:
 1. Send `GET` request to a non-existing resource . Expected status code: `404` (`NOT_FOUND`).
@@ -52,6 +53,10 @@ Negative test cases:
 `PUT` method is used to **SEND** the data to a server to **UPDATE** a resource.
 
 **POST vs PUT**. The difference between `POST` and `PUT` requests is that PUT is _idempotent_. Calling the same `PUT` request multiple times will always produce the same result. In contrast, calling a `POST` request repeatedly have side effects of creating the same resource multiple times.
+
+#### Testing `PUT` endpoint
+
+
 
 ### Save vs Idempotent methods
 
