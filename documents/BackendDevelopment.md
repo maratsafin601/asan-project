@@ -1,4 +1,4 @@
-# Asan-Project ::: Backend Development and API Testing
+# Backend Development
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
@@ -20,6 +20,8 @@ You can run your application in dev mode that enables live coding using:
 ```shell script
 ./mvnw compile quarkus:dev OR ./mvnw quarkus:dev
 ```
+
+Then navigate to http://0.0.0.0:8080/ in a browser.
 
 > **_NOTE:_**  Quarkus now ships with a Dev UI, which is available in dev mode only at http://localhost:8080/q/dev/.
 
