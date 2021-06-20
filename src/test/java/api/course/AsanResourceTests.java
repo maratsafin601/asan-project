@@ -7,15 +7,15 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
-public class AsanResourceTest {
+public class AsanResourceTests {
 
     @Test
-    public void testHelloEndpoint() {
+    public void getHelloApiEndpoint_GivenValidRequest_Resturns200StatusCode() {
         given()
           .when().get("/hello")
           .then()
              .statusCode(200)
-             .body(is("Hello RESTEasy"));
+             .body(is("Hello User!"));
     }
 
 }
