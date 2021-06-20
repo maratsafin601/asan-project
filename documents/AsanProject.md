@@ -1,17 +1,31 @@
-# Backend Development
+# About Asan Project
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This is a backend development and API testing application written in Java that uses Quarkus and Maven.
 
-## How to create a new project
+## How to create your own application
 
-Building an application with Quarkus and Maven - https://quarkus.io/guides/maven-tooling.
+The easiest way to bootstrap a new project is to open a terminal and run the following command:
+
+For Linux & MacOS users
 
 ```shell script
-mvn io.quarkus:quarkus-maven-plugin:1.13.4.Final:create \
-    -DprojectGroupId=my-groupId \
-    -DprojectArtifactId=my-artifactId \
-    -DprojectVersion=my-version \
-    -DclassName="org.my.group.MyResource"
+mvn io.quarkus:quarkus-maven-plugin:1.13.7.Final:create \
+    -DprojectGroupId=org.acme \
+    -DprojectArtifactId=getting-started \
+    -DclassName="org.acme.getting.started.GreetingResource"
+    -Dpath="/hello"
+```
+
+For Windows users:
+
+if using cmd, don’t use backward slash '\':
+```shell script
+mvn io.quarkus:quarkus-maven-plugin:1.13.7.Final:create -DprojectGroupId=org.acme -DprojectArtifactId=getting-started -DclassName="org.acme.getting.started.GreetingResource" -Dpath="/hello"
+```
+
+if using Powershell, wrap -D parameters in double quotes:
+```shell script
+mvn io.quarkus:quarkus-maven-plugin:1.13.7.Final:create "-DprojectGroupId=org.acme" "-DprojectArtifactId=getting-started" "-DclassName=org.acme.getting.started.GreetingResource" "-Dpath=/hello"
 ```
 
 ## How to run the application in dev mode
@@ -55,21 +69,13 @@ Or, if you don't have GraalVM installed, you can run the native executable build
 
 You can then execute your native executable with: `./target/asan-project-1.0.0-SNAPSHOT-runner`
 
-If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.html.
-
-## Provided examples
-
-### RESTEasy JAX-RS example
-
-REST is easy peasy with this Hello World RESTEasy resource.
-
-Related guide section: https://quarkus.io/guides/getting-started#the-jax-rs-resources.
-
 ## References
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/.
 
+Step-by-step instruction to create your first application: https://quarkus.io/guides/getting-started
+
+Building an application with Quarkus and Maven: https://quarkus.io/guides/maven-tooling
+
 Udemy course: https://www.udemy.com/course/quarkus-backend-development-java/.
-
 Course GitHub link: https://github.com/quarkus-course.
-
