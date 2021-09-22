@@ -1,5 +1,8 @@
 package api.course;
 
+import api.course.utilities.UserGenerator;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 
@@ -10,12 +13,32 @@ import static org.hamcrest.CoreMatchers.is;
 public class AsanResourceTests {
 
     @Test
-    public void getHelloApiEndpoint_GivenValidRequest_Resturns200StatusCode() {
+    void t() throws JsonProcessingException {
+    System.out.println(new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(UserGenerator.generate()));
+    }
+    @Test
+    public void get_GivenValidRequest_Returns200StatusCode() {
+
         given()
-          .when().get("/hello")
-          .then()
-             .statusCode(200)
-             .body(is("Hello User!"));
+                .when()
+                .get("/asan/hello")
+                .then()
+                .statusCode(200)
+                .body(is("Hello!"));
+    }
+
+    @Test
+    public void post_GivenValidRequest_Returns201StatusCode() {
+
+        String name = "John";
+
+        given()
+                .body(name)
+                .when()
+                .post("/asan/hello")
+                .then()
+                .statusCode(200)
+                .body(is("Hello " + name + "!"));
     }
 
 }

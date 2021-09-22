@@ -1,6 +1,6 @@
 # About Asan Project
 
-This is the backend development and API testing application written in Java and built with Quarkus and Maven.
+Asan Project is a backend development and API testing project written in Java and built with Quarkus and Maven.
 
 ## How to create your own application
 
@@ -18,7 +18,7 @@ mvn io.quarkus:quarkus-maven-plugin:1.13.7.Final:create \
 
 For Windows users:
 
-If using cmd, don’t use backward slash '\':
+If using cmd, don’t use backward slash \:
 ```shell script
 mvn io.quarkus:quarkus-maven-plugin:1.13.7.Final:create -DprojectGroupId=org.acme -DprojectArtifactId=getting-started -DclassName="org.acme.getting.started.GreetingResource" -Dpath="/hello"
 ```

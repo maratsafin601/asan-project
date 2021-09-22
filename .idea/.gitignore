@@ -1,3 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+# JMeter
+.jmx
+
 # Created by https://www.toptal.com/developers/gitignore/api/java,macos,intellij,maven
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,macos,intellij,maven
 
