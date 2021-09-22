@@ -1,37 +1,59 @@
 package api.course.api;
 
 import api.course.models.User;
-import api.course.models.Users;
-import org.jboss.logging.annotations.Param;
+import api.course.utilities.Storage;
+import api.course.utilities.UserGenerator;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Path("/asan")
 public class AsanResource {
 
-    private static final Users users = new Users();
-
-    // --- API V0 -------------------------------------------------------------
-
     /**
-     * GET method is used to RETRIEVE the data from a server at the specified resource.
+     * GREETING API.
      */
+
+    // Simple GET endpoint.
     @GET
-    @Produces(MediaType.TEXT_PLAIN)
     public String getGreeting() {
-        return "Hello User!";
+        User user = UserGenerator.generate();
+
+        return "Hello " + user.getFirstName() + "!";
+    }
+
+    // Simple POST endpoint.
+    @POST
+    public String postGreeting(String name) {
+
+        return "Hello " + name + "!";
     }
 
     /**
-     * POST method is used to SEND the data to a server to CREATE a new resource.
+     * USER API.
      */
-    @POST
-    @Produces(MediaType.TEXT_PLAIN)
-    @Consumes(MediaType.TEXT_PLAIN)
-    public String createGreetingText(String username) {
-        return "Hello " + username + "!"; // NOTE: resource is returned, but not created
+
+    @GET
+    @Path(("/users/0"))
+    @Produces(MediaType.APPLICATION_JSON)
+    public User getUser(@QueryParam("id") int id) {
+
+//        return Storage.getUser(0);
+        return null;
     }
+
+    @GET
+    @Path(("/users"))
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<User> getUsers() {
+
+//        return List.of(UserGenerator.generateUser());
+//        return Storage.getUsers();
+        return null;
+    }
+
+    // GET method is used to RETRIEVE the data from a server at the specified resource.
 
 //    @POST
 //    @Produces(MediaType.APPLICATION_JSON) // NOTE: New Media-Type
@@ -41,17 +63,9 @@ public class AsanResource {
 //    }
 
 
+//    private static final Users users = new Users();
 
     // --- API V1 -------------------------------------------------------------
-
-    @GET
-    @Path(("/users"))                                                       // FIXME
-    @Produces(MediaType.APPLICATION_JSON)
-    public Users getUsers() {
-        users.getUsers().add(new User("Bob SMith"));
-        "".substring(1);
-        return users;
-    }
 
     /**
      * POST method is used to SEND the data to a server to CREATE a new resource.
