@@ -1,11 +1,9 @@
 package api.course.utilities;
 
-import api.course.models.Address;
-import api.course.models.Status;
-import api.course.models.User;
+import api.course.api.v1.models.Address;
+import api.course.api.v1.models.Status;
+import api.course.api.v1.models.User;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
@@ -28,7 +26,7 @@ public class UserGenerator {
 
     User user = new User();
     user.setStatus(Status.values()[new Random().nextInt(Status.values().length)]);
-    user.setId(UUID.randomUUID().toString());
+    user.setUuid(UUID.randomUUID().toString());
     user.setFirstName(generateFirstName());
     user.setLastName(generateLastName());
     user.setEmail(user.getFirstName() + "." + user.getLastName() + "@gmail.com");

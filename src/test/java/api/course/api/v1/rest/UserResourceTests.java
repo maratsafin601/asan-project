@@ -1,4 +1,4 @@
-package api.course;
+package api.course.api.v1.rest;
 
 import api.course.utilities.UserGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -10,12 +10,9 @@ import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
-public class AsanResourceTests {
+public class UserResourceTests {
 
-    @Test
-    void t() throws JsonProcessingException {
-    System.out.println(new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(UserGenerator.generate()));
-    }
+
     @Test
     public void get_GivenValidRequest_Returns200StatusCode() {
 
