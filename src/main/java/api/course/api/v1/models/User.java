@@ -3,8 +3,6 @@ package api.course.api.v1.models;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.eclipse.microprofile.openapi.annotations.media.Schema;
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -79,7 +77,6 @@ public class User {
     this.email = email;
   }
 
-  @NotBlank
   public Address getAddress() {
     return address;
   }
@@ -105,7 +102,7 @@ public class User {
 
   @Override
   public int hashCode() {
-    return new HashCodeBuilder()
+    return new HashCodeBuilder(17, 37)
         .append(getUuid())
         .append(getStatus())
         .append(getFirstName())

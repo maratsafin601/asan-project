@@ -14,4 +14,11 @@ public class Constants {
   public static class Endpoint {
     public static final String USERS = "/users";
   }
+
+  public static class Error {
+    public static final String MUST_NOT_BE_NULL = "must not be null";
+    public static final String MUST_NOT_BE_BLANK = "must not be blank";
+    public static final String MUST_NOT_BE_EMPTY = "must not be empty";
+    public static final String INVALID_ID = "invalid id";
+  }
 }
