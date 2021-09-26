@@ -1,4 +1,4 @@
-package api.course.models;
+package api.course.api.v1.models;
 
 public enum Status {
     ACTIVE,
