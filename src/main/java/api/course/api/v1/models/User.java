@@ -1,6 +1,5 @@
 package api.course.api.v1.models;
 
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
@@ -10,19 +9,8 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import java.time.Instant;
 
-@JsonPropertyOrder({
-  "id",
-  "status",
-  "firstName",
-  "lastName",
-  "email",
-  "address",
-  "createdOn",
-  "updatedOn"
-})
 public class User {
 
   private String id;
