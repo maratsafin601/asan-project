@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 
 public class User {
 
-  private String uuid;
+  private String id;
   private Status status;
   private String firstName;
   private String lastName;
@@ -18,13 +18,13 @@ public class User {
   public User() {}
 
   public User(
-      String uuid,
+      String id,
       Status status,
       String firstName,
       String lastName,
       String email,
       Address address) {
-    this.uuid = uuid;
+    this.id = id;
     this.status = status;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -32,13 +32,12 @@ public class User {
     this.address = address;
   }
 
-  @NotBlank
-  public String getUuid() {
-    return uuid;
+  public String getId() {
+    return id;
   }
 
-  public void setUuid(String uuid) {
-    this.uuid = uuid;
+  public void setId(String id) {
+    this.id = id;
   }
 
   @NotNull
@@ -91,7 +90,7 @@ public class User {
     if (!(o instanceof User)) return false;
     User that = (User) o;
     return new EqualsBuilder()
-        .append(getUuid(), that.getUuid())
+        .append(getId(), that.getId())
         .append(getStatus(), that.getStatus())
         .append(getFirstName(), that.getFirstName())
         .append(getLastName(), that.getLastName())
@@ -103,7 +102,7 @@ public class User {
   @Override
   public int hashCode() {
     return new HashCodeBuilder(17, 37)
-        .append(getUuid())
+        .append(getId())
         .append(getStatus())
         .append(getFirstName())
         .append(getLastName())
@@ -115,7 +114,7 @@ public class User {
   @Override
   public String toString() {
     return new ToStringBuilder(this)
-        .append("uuid", getUuid())
+        .append("uuid", getId())
         .append("status", getStatus())
         .append("firstName", getFirstName())
         .append("lastName", getLastName())
