@@ -3,7 +3,6 @@ package api.course.utilities;
 import api.course.api.v1.models.Address;
 import api.course.api.v1.models.Status;
 import api.course.api.v1.models.User;
-
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
