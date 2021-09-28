@@ -4,9 +4,9 @@ import api.course.api.v1.impl.UserService;
 import api.course.api.v1.models.Error;
 import api.course.api.v1.models.User;
 import api.course.utilities.Constants;
-import api.course.utilities.Storage;
 import api.course.utilities.UserGenerator;
 import org.jboss.logging.Logger;
+import org.jboss.resteasy.annotations.jaxrs.QueryParam;
 
 import javax.inject.Inject;
 import javax.validation.Valid;
@@ -22,7 +22,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
-import java.util.Map;
 
 @Path("/asan" + Constants.UriFragment.API_V1)
 @Produces(MediaType.APPLICATION_JSON)
@@ -56,9 +55,9 @@ public class UserResource {
 
   @GET
   @Path(Constants.Endpoint.USERS)
-  public Response listUsers() {
+  public Response listUsers(@QueryParam(Constants.QueryParam.SORT) String sort) {
     logger.info("listUsers endpoint hit");
-    List<User> userList = userService.listUsers();
+    List<User> userList = userService.listUsers(sort);
     return Response.status(Response.Status.OK).entity(userList).build();
   }
 

@@ -11,6 +11,12 @@ public class Constants {
     public static final String ID = "id";
   }
 
+  public static class QueryParam {
+    public static final String SORT = "sort";
+    public static final String ASC = "asc";
+    public static final String DESC = "desc";
+  }
+
   public static class Endpoint {
     public static final String USERS = "/users";
   }

@@ -4,6 +4,7 @@ import api.course.api.v1.models.Address;
 import api.course.api.v1.models.Status;
 import api.course.api.v1.models.User;
 
+import java.time.Instant;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -25,6 +26,10 @@ public class Storage {
     user.setLastName("Gump");
     user.setEmail(user.getFirstName() + "." + user.getLastName() + "@gmail.com");
     user.setAddress(address);
+
+    final Instant now = Instant.now();
+    user.setCreatedOn(now);
+    user.setUpdatedOn(now);
 
     userMap.put(user.getId(), user);
   }
