@@ -26,7 +26,7 @@ public class UserGenerator {
 
     User user = new User();
     user.setStatus(Status.values()[new Random().nextInt(Status.values().length)]);
-    user.setUuid(UUID.randomUUID().toString());
+    user.setId(UUID.randomUUID().toString());
     user.setFirstName(generateFirstName());
     user.setLastName(generateLastName());
     user.setEmail(user.getFirstName() + "." + user.getLastName() + "@gmail.com");

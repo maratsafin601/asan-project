@@ -4,12 +4,12 @@ import api.course.api.v1.models.Address;
 import api.course.api.v1.models.Status;
 import api.course.api.v1.models.User;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Storage {
 
-  private static List<User> userList = new ArrayList<>();
+  private static Map<String, User> userMap = new HashMap<>();
 
   static {
     Address address = new Address();
@@ -20,20 +20,20 @@ public class Storage {
 
     User user = new User();
     user.setStatus(Status.PENDING);
-    user.setUuid("aba9e794-620f-4338-ad23-eb1d7e0ac2d6");
+    user.setId("aba9e794-620f-4338-ad23-eb1d7e0ac2d6");
     user.setFirstName("Forrest");
     user.setLastName("Gump");
     user.setEmail(user.getFirstName() + "." + user.getLastName() + "@gmail.com");
     user.setAddress(address);
 
-    userList.add(user);
+    userMap.put(user.getId(), user);
   }
 
   private Storage() {
     /* No-op: prevents instantiation. */
   }
 
-  public static List<User> getUserList() {
-    return userList;
+  public static Map<String, User> getUserMap() {
+    return userMap;
   }
 }
