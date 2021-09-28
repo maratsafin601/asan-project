@@ -3,6 +3,7 @@ package api.course.api.v1.models;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import javax.validation.constraints.NotBlank;
 
 public class Address {
 
@@ -20,7 +21,7 @@ public class Address {
     this.zipCode = zipCode;
   }
 
-//  @NotBlank
+  @NotBlank
   public String getStreetAddress() {
     return streetAddress;
   }
@@ -29,7 +30,7 @@ public class Address {
     this.streetAddress = streetAddress;
   }
 
-//  @NotBlank
+  @NotBlank
   public String getCity() {
     return city;
   }
@@ -38,7 +39,7 @@ public class Address {
     this.city = city;
   }
 
-//  @NotBlank
+  @NotBlank
   public String getCountry() {
     return country;
   }
@@ -47,7 +48,7 @@ public class Address {
     this.country = country;
   }
 
-//  @NotBlank
+  @NotBlank
   public String getZipCode() {
     return zipCode;
   }

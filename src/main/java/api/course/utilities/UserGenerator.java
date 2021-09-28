@@ -4,6 +4,7 @@ import api.course.api.v1.models.Address;
 import api.course.api.v1.models.Status;
 import api.course.api.v1.models.User;
 
+import java.time.Instant;
 import java.util.Random;
 import java.util.UUID;
 
@@ -31,6 +32,9 @@ public class UserGenerator {
     user.setLastName(generateLastName());
     user.setEmail(user.getFirstName() + "." + user.getLastName() + "@gmail.com");
     user.setAddress(address);
+    Instant now = Instant.now();
+    user.setCreatedOn(now);
+    user.setUpdatedOn(now);
 
     return user;
   }

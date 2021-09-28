@@ -1,11 +1,28 @@
 package api.course.api.v1.models;
 
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+
+import javax.validation.Valid;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+import java.time.Instant;
 
+@JsonPropertyOrder({
+  "id",
+  "status",
+  "firstName",
+  "lastName",
+  "email",
+  "address",
+  "createdOn",
+  "updatedOn"
+})
 public class User {
 
   private String id;
@@ -14,6 +31,8 @@ public class User {
   private String lastName;
   private String email;
   private Address address;
+  private Instant createdOn;
+  private Instant updatedOn;
 
   public User() {}
 
@@ -23,13 +42,17 @@ public class User {
       String firstName,
       String lastName,
       String email,
-      Address address) {
+      Address address,
+      Instant createdOn,
+      Instant updatedOn) {
     this.id = id;
     this.status = status;
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
     this.address = address;
+    this.createdOn = createdOn;
+    this.updatedOn = updatedOn;
   }
 
   public String getId() {
@@ -50,6 +73,7 @@ public class User {
   }
 
   @NotBlank
+  @Pattern(regexp = "^[a-zA-Z]{1,10}$")
   public String getFirstName() {
     return firstName;
   }
@@ -59,6 +83,7 @@ public class User {
   }
 
   @NotBlank
+  @Pattern(regexp = "^[a-zA-Z]{1,10}$")
   public String getLastName() {
     return lastName;
   }
@@ -68,6 +93,7 @@ public class User {
   }
 
   @NotBlank
+  @Email
   public String getEmail() {
     return email;
   }
@@ -76,12 +102,30 @@ public class User {
     this.email = email;
   }
 
+  @Valid
+  @NotNull
   public Address getAddress() {
     return address;
   }
 
   public void setAddress(Address address) {
     this.address = address;
+  }
+
+  public Instant getCreatedOn() {
+    return createdOn;
+  }
+
+  public void setCreatedOn(Instant createdOn) {
+    this.createdOn = createdOn;
+  }
+
+  public Instant getUpdatedOn() {
+    return updatedOn;
+  }
+
+  public void setUpdatedOn(Instant updatedOn) {
+    this.updatedOn = updatedOn;
   }
 
   @Override
@@ -96,6 +140,8 @@ public class User {
         .append(getLastName(), that.getLastName())
         .append(getEmail(), that.getEmail())
         .append(getAddress(), that.getAddress())
+        .append(getCreatedOn(), that.getCreatedOn())
+        .append(getUpdatedOn(), that.getUpdatedOn())
         .isEquals();
   }
 
@@ -108,6 +154,8 @@ public class User {
         .append(getLastName())
         .append(getEmail())
         .append(getAddress())
+        .append(getCreatedOn())
+        .append(getUpdatedOn())
         .toHashCode();
   }
 
@@ -120,6 +168,8 @@ public class User {
         .append("lastName", getLastName())
         .append("email", getEmail())
         .append("address", getAddress())
+        .append("createdOn", getCreatedOn())
+        .append("updatedOn", getUpdatedOn())
         .toString();
   }
 }
