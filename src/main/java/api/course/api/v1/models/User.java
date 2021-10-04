@@ -160,4 +160,12 @@ public class User {
         .append("updatedOn", getUpdatedOn())
         .toString();
   }
+
+  public enum Status {
+    ACTIVE,
+    PENDING,
+    VERIFIED,
+    BLOCKED,
+    RETIRED
+  }
 }

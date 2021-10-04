@@ -11,8 +11,7 @@ public class Error {
     private Response.Status status;
     private String message;
 
-    public Error() {
-    }
+    public Error() {}
 
     public Error(Response.Status status, String message) {
         this.status = status;

@@ -90,7 +90,6 @@
     <orderEntry type="library" name="Maven: org.glassfish:jakarta.el:3.0.3" level="project" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-resteasy-jackson:1.13.4.Final" level="project" />
     <orderEntry type="library" name="Maven: io.quarkus:quarkus-jackson:1.13.4.Final" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.12.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-parameter-names:2.12.3" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.resteasy:resteasy-jackson2-provider:4.5.12.Final" level="project" />
@@ -200,5 +199,6 @@
     <orderEntry type="library" name="Maven: com.google.flogger:flogger:0.6" level="project" />
     <orderEntry type="library" name="Maven: org.checkerframework:checker-compat-qual:2.5.3" level="project" />
     <orderEntry type="library" name="Maven: org.eclipse.microprofile.openapi:microprofile-openapi-api:2.0" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0" level="project" />
   </component>
 </module>

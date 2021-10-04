@@ -1,7 +1,6 @@
 package api.course.utilities;
 
 import api.course.api.v1.models.Address;
-import api.course.api.v1.models.Status;
 import api.course.api.v1.models.User;
 import java.time.Instant;
 import java.util.Random;
@@ -17,7 +16,7 @@ public class UserGenerator {
     /* No-op to prevent instantiation. */
   }
 
-  public static User generate() {
+  public static User generateRequiredFields() {
     Address address = new Address();
     address.setStreetAddress(generateStreetAddress());
     address.setCity(generateCity());
@@ -25,12 +24,18 @@ public class UserGenerator {
     address.setCountry(generateCountry());
 
     User user = new User();
-    user.setStatus(Status.values()[new Random().nextInt(Status.values().length)]);
-    user.setId(UUID.randomUUID().toString());
+    user.setStatus(User.Status.values()[new Random().nextInt(User.Status.values().length)]);
     user.setFirstName(generateFirstName());
     user.setLastName(generateLastName());
     user.setEmail(user.getFirstName() + "." + user.getLastName() + "@gmail.com");
     user.setAddress(address);
+
+    return user;
+  }
+
+  public static User generateAllFields() {
+    User user = generateRequiredFields();
+    user.setId(UUID.randomUUID().toString());
     Instant now = Instant.now();
     user.setCreatedOn(now);
     user.setUpdatedOn(now);
