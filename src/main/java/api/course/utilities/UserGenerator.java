@@ -16,6 +16,24 @@ public class UserGenerator {
     /* No-op to prevent instantiation. */
   }
 
+  public static User generateDefaultUser() {
+
+    Address address = new Address();
+    address.setStreetAddress("Default Street");
+    address.setCity("Default City");
+    address.setCountry("Default Country");
+    address.setZipCode("00000");
+
+    User user = new User();
+    user.setStatus(User.Status.ACTIVE);
+    user.setFirstName("Default");
+    user.setLastName("Default");
+    user.setEmail("default@default.com");
+    user.setAddress(address);
+
+    return user;
+  }
+
   public static User generateRequiredFields() {
     Address address = new Address();
     address.setStreetAddress(generateStreetAddress());
