@@ -20,4 +20,7 @@ public abstract class BaseTest {
     RestAssured.baseURI = "http://" + apiHost + "/asan/api/v1";
     RestAssured.port = apiPort;
   }
+
+  // TODO add cleanup method - to delete all test objects
+
 }

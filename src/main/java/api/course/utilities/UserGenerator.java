@@ -17,7 +17,6 @@ public class UserGenerator {
   }
 
   public static User generateDefaultUser() {
-
     Address address = new Address();
     address.setStreetAddress("Default Street");
     address.setCity("Default City");

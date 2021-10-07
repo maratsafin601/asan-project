@@ -5,16 +5,16 @@ import static javax.ws.rs.core.Response.Status.NO_CONTENT;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
-import api.course.api.v1.models.User;
+import api.course.api.v1.models.UserT;
 import api.course.api.v1.utilities.UserRestClient;
-import api.course.utilities.UserGenerator;
+import api.course.api.v1.utilities.UserGenerator;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
 @QuarkusTest
-public class DeleteUserTests extends BaseTest {
+class DeleteUserTests extends BaseTest {
 
   UserRestClient userRestClient = new UserRestClient();
 
@@ -35,9 +35,9 @@ public class DeleteUserTests extends BaseTest {
   @Test
   void deleteUser_GivenExistingUserId_UserDeleted() {
     // Arrange - creates a user
-    User user = UserGenerator.generateDefaultUser();
+    UserT user = UserGenerator.generateDefaultUser();
     Response postResponse = userRestClient.createUser(user);
-    String id = postResponse.as(new TypeRef<User>() {}).getId();
+    String id = postResponse.as(new TypeRef<UserT>() {}).getId();
 
     // Act - removes the user
     Response deleteResponse = userRestClient.deleteUser(id);
@@ -50,4 +50,7 @@ public class DeleteUserTests extends BaseTest {
     Response getResponse = userRestClient.getUser(id);
     assertThat(getResponse.getStatusCode(), is(NOT_FOUND.getStatusCode()));
   }
+
+  // TODO add coverage - write more tests (functional, negative, integration, etc.)
+
 }

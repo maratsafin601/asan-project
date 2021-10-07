@@ -26,6 +26,7 @@ import java.util.List;
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserResource {
 
+  private static final String USER_NOT_FOUND = "user not found: id=";
   private static final Logger logger = Logger.getLogger(UserResource.class.getName());
 
   @Inject private UserService userService;
@@ -46,10 +47,10 @@ public class UserResource {
     if (foundUser != null) {
       return Response.status(Response.Status.OK).entity(foundUser).build();
     }
-    logger.info("user not found: id=" + id);
+    logger.info(USER_NOT_FOUND + id);
     return Response.status(Response.Status.NOT_FOUND)
-            .entity(new Error(Response.Status.NOT_FOUND, "user not found: id=" + id))
-            .build();
+        .entity(new Error(Response.Status.NOT_FOUND, USER_NOT_FOUND + id))
+        .build();
   }
 
   @GET
@@ -69,9 +70,9 @@ public class UserResource {
     if (updatedUser != null) {
       return Response.status(Response.Status.OK).entity(user).build();
     }
-    logger.info("user not found: id=" + id);
+    logger.info(USER_NOT_FOUND + id);
     return Response.status(Response.Status.NOT_FOUND)
-        .entity(new Error(Response.Status.NOT_FOUND, "user not found: id=" + id))
+        .entity(new Error(Response.Status.NOT_FOUND, USER_NOT_FOUND + id))
         .build();
   }
 
@@ -82,9 +83,9 @@ public class UserResource {
     if (userService.deleteUser(id)) {
       return Response.status(Response.Status.NO_CONTENT).build();
     }
-    logger.info("user not found: id=" + id);
+    logger.info(USER_NOT_FOUND + id);
     return Response.status(Response.Status.NOT_FOUND)
-        .entity(new Error(Response.Status.NOT_FOUND, "user not found: id=" + id))
+        .entity(new Error(Response.Status.NOT_FOUND, USER_NOT_FOUND + id))
         .build();
   }
 }

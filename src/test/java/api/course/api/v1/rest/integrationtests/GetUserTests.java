@@ -6,9 +6,9 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-import api.course.api.v1.models.User;
+import api.course.api.v1.models.UserT;
+import api.course.api.v1.utilities.UserGenerator;
 import api.course.api.v1.utilities.UserRestClient;
-import api.course.utilities.UserGenerator;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.response.Response;
@@ -18,7 +18,7 @@ import java.util.Map;
 import java.util.Set;
 
 @QuarkusTest
-public class GetUserTests extends BaseTest {
+class GetUserTests extends BaseTest {
 
   private static final Set<String> EXPECTED_FIELDS =
       Set.of("id", "firstName", "lastName", "status", "email", "address", "createdOn", "updatedOn");
@@ -41,12 +41,12 @@ public class GetUserTests extends BaseTest {
   @Test
   void getUser_GivenValidRequest_UserRetrieved() {
     // Arrange - creates a user
-    User user = UserGenerator.generateDefaultUser();
+    UserT user = UserGenerator.generateDefaultUser();
     Response postResponse = userRestClient.createUser(user);
     assumeTrue(
         CREATED.getStatusCode() == postResponse.statusCode(),
         "POST request failed.");
-    String id = postResponse.as(new TypeRef<User>() {}).getId();
+    String id = postResponse.as(new TypeRef<UserT>() {}).getId();
 
     // Act - retrieves the user
     Response getResponse = userRestClient.getUser(id);
@@ -58,4 +58,7 @@ public class GetUserTests extends BaseTest {
     Set<String> actualFields = getResponse.as(new TypeRef<Map<String, Object>>() {}).keySet();
     assertThat(actualFields, equalTo(EXPECTED_FIELDS));
   }
+
+  // TODO add coverage - write more tests (functional, negative, integration, etc.)
+
 }
