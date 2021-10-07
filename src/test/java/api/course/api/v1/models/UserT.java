@@ -3,25 +3,26 @@ package api.course.api.v1.models;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.time.Instant;
 
-public class User {
+public class UserT {
 
   private String id;
-  private Status status;
+  private UserStatus status;
   private String firstName;
   private String lastName;
   private String email;
-  private Address address;
+  private AddressT address;
   private Instant createdOn;
   private Instant updatedOn;
 
   // non-argument constructor
-  public User() {}
+  public UserT() {}
 
   // custom constructor for required fields only
-  public User(Status status, String firstName, String lastName, String email, Address address) {
+  public UserT(UserStatus status, String firstName, String lastName, String email, AddressT address) {
     this.status = status;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -30,13 +31,13 @@ public class User {
   }
 
   // all-argument constructor
-  public User(
+  public UserT(
       String id,
-      Status status,
+      UserStatus status,
       String firstName,
       String lastName,
       String email,
-      Address address,
+      AddressT address,
       Instant createdOn,
       Instant updatedOn) {
     this.id = id;
@@ -57,11 +58,11 @@ public class User {
     this.id = id;
   }
 
-  public Status getStatus() {
+  public UserStatus getStatus() {
     return status;
   }
 
-  public void setStatus(Status status) {
+  public void setStatus(UserStatus status) {
     this.status = status;
   }
 
@@ -89,11 +90,11 @@ public class User {
     this.email = email;
   }
 
-  public Address getAddress() {
+  public AddressT getAddress() {
     return address;
   }
 
-  public void setAddress(Address address) {
+  public void setAddress(AddressT address) {
     this.address = address;
   }
 
@@ -116,8 +117,8 @@ public class User {
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
-    if (!(o instanceof User)) return false;
-    User that = (User) o;
+    if (!(o instanceof UserT)) return false;
+    UserT that = (UserT) o;
     return new EqualsBuilder()
         .append(getStatus(), that.getStatus())
         .append(getFirstName(), that.getFirstName())
@@ -141,18 +142,31 @@ public class User {
   @Override
   public String toString() {
     return new ToStringBuilder(this)
-            .append("id", getId())
-            .append("status", getStatus())
-            .append("firstName", getFirstName())
-            .append("lastName", getLastName())
-            .append("email", getEmail())
-            .append("address", getAddress())
-            .append("createdOn", getCreatedOn())
-            .append("updatedOn", getUpdatedOn())
-            .toString();
+        .append("id", getId())
+        .append("status", getStatus())
+        .append("firstName", getFirstName())
+        .append("lastName", getLastName())
+        .append("email", getEmail())
+        .append("address", getAddress())
+        .append("createdOn", getCreatedOn())
+        .append("updatedOn", getUpdatedOn())
+        .toString();
   }
 
-  public enum Status {
+  private String toJsonString() {
+    return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
+        .append("id", getId())
+        .append("status", getStatus())
+        .append("firstName", getFirstName())
+        .append("lastName", getLastName())
+        .append("email", getEmail())
+        .append("address", getAddress()) // FIXME recursive to json string style
+        .append("createdOn", getCreatedOn())
+        .append("updatedOn", getUpdatedOn())
+        .toString();
+  }
+
+  public enum UserStatus {
     ACTIVE,
     PENDING,
     VERIFIED,

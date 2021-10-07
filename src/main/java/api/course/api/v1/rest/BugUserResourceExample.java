@@ -20,11 +20,10 @@ import javax.ws.rs.core.Response;
 import java.time.Instant;
 import java.util.UUID;
 
-@Deprecated
 @Path("/asan" + Constants.UriFragment.API_V1)
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class BugUserResource {
+public class BugUserResourceExample {
 
   private static final Logger logger = Logger.getLogger(UserResource.class.getName());
 

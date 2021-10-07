@@ -1,0 +1,12 @@
+{
+  "address": {
+    "city": "Greenbow",
+    "country": "USA",
+    "streetAddress": "Park St",
+    "zipCode": "12345"
+  },
+  "email": "Forrest.Gump@gmail.com",
+  "firstName": "Forrest",
+  "lastName": "Gump",
+  "status": "PENDING",
+}

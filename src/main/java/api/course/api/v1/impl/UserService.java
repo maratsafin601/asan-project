@@ -44,16 +44,16 @@ public class UserService {
   public List<User> listUsers(String sort) {
     logger.info("listUsers invoked");
     List<User> userList = UserStorage.getUserList();
-//    if (sort.equals(Constants.QueryParam.ASC)) {
-//      return userList.stream()
-//          .sorted(Comparator.comparing(User::getFirstName))
-//          .collect(Collectors.toList());
-//    }
-//    if (sort.equals(Constants.QueryParam.DESC)) {
-//      return userList.stream()
-//              .sorted(Comparator.comparing(User::getFirstName).reversed())
-//              .collect(Collectors.toList());
-//    }
+    //    if (sort.equals(Constants.QueryParam.ASC)) {
+    //      return userList.stream()
+    //          .sorted(Comparator.comparing(User::getFirstName))
+    //          .collect(Collectors.toList());
+    //    }
+    //    if (sort.equals(Constants.QueryParam.DESC)) {
+    //      return userList.stream()
+    //              .sorted(Comparator.comparing(User::getFirstName).reversed())
+    //              .collect(Collectors.toList());
+    //    }
     auditService.createEvent(Action.LIST, Event.Status.SUCCESS);
     return userList;
   }

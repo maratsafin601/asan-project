@@ -2,9 +2,6 @@ package api.course.api.v1.rest.componenttests;
 
 import static javax.ws.rs.core.Response.Status.CREATED;
 
-import api.course.api.v1.models.Address;
-import api.course.api.v1.models.User;
-import api.course.utilities.UserGenerator;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
